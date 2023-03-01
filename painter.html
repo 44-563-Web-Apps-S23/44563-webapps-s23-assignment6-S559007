@@ -18,7 +18,10 @@
 
     <input type="button" onclick="checkPainter()" value="Check the guess">
 </form>
-
+<div class="container">
+<img src="Abies.jpg" id="image"onclick="selectImage()"
+alt="Abies.jpg" style="width:100px;height:100px;">
+</div>
 
 <p id="result">This text will be replaced </p>
 
@@ -26,6 +29,7 @@
 
 let good = 0;
 let oops = 0;
+useImage = 1;
 
 function  checkPainter(){
     password = document.getElementById("hiddenpaintername").value
@@ -41,6 +45,22 @@ function  checkPainter(){
     }
     document.getElementById("result").innerHTML='Right count : ' + good + '.<br> Wrong count : ' + oops+'.';
 }
+function selectImage(){
+    switch (useImage){
+        case 1: useImage=useImage+1
+        image.src="Abies.jpg";
+        break;
+        case 2: useImage=useImage+1
+        image.src="Ilex.jpg";
+        break;
+        case 3: useImage=useImage+1
+        image.src="Kalmia.jpg";
+        break;
+    }
+}
+function giveAlert(){
+    alert("Sorry, ran out of guesses.");
+} 
 </script>
 
 </body>
